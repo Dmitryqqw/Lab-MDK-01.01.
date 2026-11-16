@@ -21,5 +21,12 @@ namespace lab3
             Price = price;
             Count = count;
         }
+
+        public bool HasEnough(int requested) => requested <= Count;
+
+        public void Take(int quantity) => Count -= quantity;
+
+        public override string ToString() => $"{Name} — {Price} руб., {Count} шт.";
+
     }
 }
