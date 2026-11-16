@@ -47,6 +47,13 @@ namespace lab3
             return -1;
         }
 
+        private int CalculateCost(int[] ordered)
+        {
+            int total = 0;
+            for (int i = 0; i < _transports.Length; i++)
+                total += _transports[i].Price * ordered[i];
+            return total;
+        }
 
 
     }
