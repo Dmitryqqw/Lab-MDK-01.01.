@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace lab3
 {
-    internal class RentalPark
+    public class RentalPark
     {
+        private readonly Transport[] _transports;
     }
 }
