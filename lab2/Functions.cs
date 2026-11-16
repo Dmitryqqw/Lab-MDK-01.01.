@@ -68,5 +68,22 @@ namespace lab2
             return total;
         }
 
+        static void ApplyOrder(int[] ordered)
+        {
+            for (int i = 0; i < counts.Length; i++)
+                counts[i] -= ordered[i];
+        }
+
+        public static void PrintRemains()
+        {
+            Console.Write("Осталось транспорта: ");
+            for (int i = 0; i < names.Length; i++)
+            {
+                Console.Write($"{names[i]} {counts[i]}");
+                if (i < names.Length - 1) Console.Write(", ");
+            }
+            Console.WriteLine();
+        }
+
     }
 }
