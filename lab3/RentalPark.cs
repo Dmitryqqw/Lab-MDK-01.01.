@@ -55,7 +55,43 @@ namespace lab3
             return total;
         }
 
+        private void ApplyOrder(int[] ordered)
+        {
+            for (int i = 0; i < _transports.Length; i++)
+                _transports[i].Take(ordered[i]);
+        }
 
+        private int ReadInt(string prompt)
+        {
+            while (true)
+            {
+                Console.Write(prompt);
+                if (int.TryParse(Console.ReadLine(), out int value))
+                    return value;
+                Console.WriteLine("Ошибка: введите целое число.");
+            }
+        }
+
+        private int ReadTransportNumber()
+        {
+            while (true)
+            {
+                int num = ReadInt("Введите номер транспорта (0 — конец заказа): ");
+                if (num == 0) return 0;
+                if (num >= 1 && num <= _transports.Length) return num;
+                Console.WriteLine($"Ошибка: номер должен быть от 1 до {_transports.Length} или 0.");
+            }
+        }
+
+        // Добавил метод ReadQuantity для чтения количества
+        private int ReadQuantity()
+        {
+            while (true)
+            {
+                int qty = ReadInt("Введите количество: ");
+                if (qty >= 0) return qty;
+                Console.WriteLine("Ошибка: количество не может быть отрицательным.");
+            }
+        }
     }
-
 }
