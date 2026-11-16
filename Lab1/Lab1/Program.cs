@@ -19,5 +19,6 @@ namespace Lab1
         private static object hour;
 
         double deliveryCost = DeliveryCalculator.CalculateDeliveryCost(orderCost, distance, hour);
+        double totalAmount = orderCost + deliveryCost;
     }
 }

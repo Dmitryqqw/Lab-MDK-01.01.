@@ -42,5 +42,41 @@ namespace Lab1
         {
             throw new NotImplementedException();
         }
-    }    
+
+        static double CalculateDeliveryCost(double orderCost, double distance, int hour)
+        {
+            const double basePrice = 150;
+            const double additionalKmPrice = 50;
+            const double peakMultiplier = 1.3;
+
+            double totalPrice = 0;
+
+            if (orderCost >= 2000)
+            {
+                totalPrice = 0;
+            }
+            else
+            {
+                totalPrice = basePrice;
+                if (distance > 3)
+                {
+                    totalPrice += (distance - 3) * additionalKmPrice;
+                }
+            }
+
+            if (IsPeakHour(hour))
+            {
+                totalPrice *= peakMultiplier;
+            }
+
+            return Math.Round(totalPrice);
+        }
+
+        static bool IsPeakHour(int hour)
+        {
+            return (hour >= 12 && hour < 14) || (hour >= 18 && hour < 20);
+        }
+
+
+    }
 }
