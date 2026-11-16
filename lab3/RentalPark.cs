@@ -21,5 +21,12 @@ namespace lab3
                 new Transport(TransportType.Скейтборд,  "скейтборд",  950, 10)
             };
         }
+
+        public void PrintPark()
+        {
+            Console.WriteLine("Парк проката:");
+            for (int i = 0; i < _transports.Length; i++)
+                Console.WriteLine($"{i + 1}. {_transports[i]}");
+        }
     }
 }
