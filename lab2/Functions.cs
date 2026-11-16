@@ -60,5 +60,13 @@ namespace lab2
             return -1;
         }
 
+        static int CalculateCost(int[] ordered)
+        {
+            int total = 0;
+            for (int i = 0; i < prices.Length; i++)
+                total += prices[i] * ordered[i];
+            return total;
+        }
+
     }
 }
