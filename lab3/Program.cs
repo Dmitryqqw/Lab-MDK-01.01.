@@ -10,6 +10,12 @@ namespace lab3
     {
         static void Main(string[] args)
         {
+           
+          var park = new RentalPark();
+          park.PrintPark();
+          park.ProcessOrder();
+          park.PrintRemains();
+            
         }
     }
 }

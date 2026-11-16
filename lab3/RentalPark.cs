@@ -10,7 +10,7 @@ namespace lab3
     {
         private readonly Transport[] _transports;
 
-    public RentalPark()
+        public RentalPark()
         {
             _transports = new[]
             {
@@ -39,5 +39,16 @@ namespace lab3
             }
             Console.WriteLine();
         }
+        private int CheckAvailability(int[] ordered)
+        {
+            for (int i = 0; i < _transports.Length; i++)
+                if (!_transports[i].HasEnough(ordered[i]))
+                    return i;
+            return -1;
+        }
+
+
+
     }
+
 }
