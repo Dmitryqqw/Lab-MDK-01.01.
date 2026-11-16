@@ -38,5 +38,9 @@ namespace Lab1
             }
         }
 
+        internal static double CalculateDeliveryCost(object orderCost, object distance, object hour)
+        {
+            throw new NotImplementedException();
+        }
     }    
 }
