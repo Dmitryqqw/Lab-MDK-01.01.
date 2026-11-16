@@ -21,5 +21,17 @@ namespace lab2
             }
         }
 
+        static int ReadInt(string prompt)
+        {
+            while (true)
+            {
+                Console.Write(prompt);
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out int value))
+                    return value;
+                Console.WriteLine("Ошибка: введите целое число.");
+            }
+        }
+
     }
 }
