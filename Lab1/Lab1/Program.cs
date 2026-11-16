@@ -10,7 +10,9 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-
+            double orderCost = DeliveryCalculator.ReadPositiveDouble("Введите стоимость заказа (руб): ");
+            double distance = DeliveryCalculator.ReadPositiveDouble("Введите расстояние доставки (км): ");
+            int hour = DeliveryCalculator.ReadHour("Введите время заказа (час, 0-23): ");
         }
     }
 }
