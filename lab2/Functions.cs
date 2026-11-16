@@ -85,5 +85,31 @@ namespace lab2
             Console.WriteLine();
         }
 
+        public static void ProcessOrder()
+        {
+            int[] ordered = new int[names.Length];
+
+            while (true)
+            {
+                int num = ReadTransportNumber();
+                if (num == 0) break;
+                int qty = ReadQuantity();
+                ordered[num - 1] += qty;
+            }
+
+            int problem = CheckAvailability(ordered);
+            if (problem != -1)
+            {
+                Console.WriteLine($"Не хватает транспорта: {names[problem]} " +
+                                  $"(требуется {ordered[problem]}, в наличии {counts[problem]}).");
+            }
+            else
+            {
+                int cost = CalculateCost(ordered);
+                ApplyOrder(ordered);
+                Console.WriteLine($"Стоимость заказа: {cost} руб.");
+            }
+        }
+
     }
 }
