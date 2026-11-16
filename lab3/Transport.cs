@@ -11,5 +11,15 @@ namespace lab3
         public TransportType Type { get; }
         public string Name { get; }
         public int Price { get; }
+
+        public int Count { get; private set; }
+
+        public Transport(TransportType type, string name, int price, int count)
+        {
+            Type = type;
+            Name = name;
+            Price = price;
+            Count = count;
+        }
     }
 }
