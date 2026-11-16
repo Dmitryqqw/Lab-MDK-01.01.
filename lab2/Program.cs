@@ -10,6 +10,9 @@ namespace lab2
     {
         static void Main(string[] args)
         {
+           Functions.PrintPark();
+           Functions.ProcessOrder();
+           Functions.PrintRemains();
         }
     }
 }
