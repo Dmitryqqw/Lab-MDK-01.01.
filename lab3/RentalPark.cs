@@ -28,5 +28,16 @@ namespace lab3
             for (int i = 0; i < _transports.Length; i++)
                 Console.WriteLine($"{i + 1}. {_transports[i]}");
         }
+
+        public void PrintRemains()
+        {
+            Console.Write("Осталось транспорта: ");
+            for (int i = 0; i < _transports.Length; i++)
+            {
+                Console.Write($"{_transports[i].Name} {_transports[i].Count}");
+                if (i < _transports.Length - 1) Console.Write(", ");
+            }
+            Console.WriteLine();
+        }
     }
 }
