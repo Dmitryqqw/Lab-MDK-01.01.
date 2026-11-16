@@ -93,5 +93,33 @@ namespace lab3
                 Console.WriteLine("Ошибка: количество не может быть отрицательным.");
             }
         }
+
+        public void ProcessOrder()
+        {
+            int[] ordered = new int[_transports.Length];
+
+            while (true)
+            {
+                int num = ReadTransportNumber();
+                if (num == 0) break;
+
+                int qty = ReadQuantity();
+                ordered[num - 1] += qty;
+            }
+
+            int problemIndex = CheckAvailability(ordered);
+            if (problemIndex != -1)
+            {
+                Transport t = _transports[problemIndex];
+                Console.WriteLine(
+                    $"Не хватает транспорта: {t.Name} " +
+                    $"(требуется {ordered[problemIndex]}, в наличии {t.Count}).");
+                return;
+            }
+
+            int cost = CalculateCost(ordered);
+            ApplyOrder(ordered);
+            Console.WriteLine($"Стоимость заказа: {cost} руб.");
+        }
     }
 }
