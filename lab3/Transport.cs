@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace lab3
 {
-    internal class Transport
+    public class Transport
     {
+        public TransportType Type { get; }
+        public string Name { get; }
+        public int Price { get; }
     }
 }
