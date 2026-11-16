@@ -22,5 +22,21 @@ namespace Lab1
                 Console.WriteLine("Некорректный ввод. Попробуйте еще раз.");
             }
         }
+
+        public static int ReadHour(string message)
+        {
+            int hour;
+            while (true)
+            {
+                Console.Write(message);
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out hour) && hour >= 0 && hour <= 23)
+                    return hour;
+
+                Console.WriteLine("Некорректный ввод. Введите число от 0 до 23.");
+            }
+        }
+
     }
 }
